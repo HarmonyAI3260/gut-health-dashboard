@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gut Health Research Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-heart-pulse-fill me-2"></i>Gut Health Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#overview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#health-implications">Health Implications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#medication-analysis">Medication Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#scientific-research">Scientific Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testing-recommendations">Testing Recommendations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#treatment-plan">Treatment Plan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#implementation">Implementation</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="overview" class="hero-section text-center py-5 d-flex align-items-center justify-content-center">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold text-white">Gut Health Research Dashboard</h1>
+            <p class="lead text-white-75 mb-4">Comprehensive Analysis of SIBO, IBS, and Chronic Bloating</p>
+            <hr class="my-4 border-light w-25 mx-auto">
+            <p class="text-white-75">A personalized dashboard presenting evidence-based research on gut health issues, diagnostic approaches, and treatment recommendations.</p>
+            <a href="#executive-summary" class="btn btn-light btn-lg mt-3"><i class="bi bi-graph-up me-2"></i>View Dashboard</a>
+        </div>
+    </header>
+
+    <main class="container mt-5 mb-5">
+        <!-- Executive Summary Section -->
+        <section id="executive-summary" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-clipboard2-data-fill me-2"></i>Executive Summary</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">This dashboard presents a comprehensive analysis of gut health issues for a 39-year-old North Indian male experiencing excessive bloating, particularly after consuming trigger foods.</p>
+                <p>Key findings indicate a high likelihood of Small Intestinal Bacterial Overgrowth (SIBO), with symptoms that respond temporarily to antimicrobial treatment but recur after 2-3 months.</p>
+                <div class="alert alert-info mt-3" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-check-circle-fill me-2"></i>Primary Recommendation:</h4>
+                    <p>Rifagut 400mg three times daily for 14 days, followed by prokinetic therapy and dietary modifications.</p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-3" data-aos="fade-right">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Condition Severity</h5>
+                                <div style="height: 250px;"><canvas id="severityChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="fade-up">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-capsule-pill display-3 text-primary mb-3"></i>
+                                <h5 class="card-title">Medication Protocol</h5>
+                                <p class="card-text">Evidence-based medication recommendations with optimal dosing.</p>
+                                <a href="#medication-analysis" class="btn btn-outline-primary mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="fade-left">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-clipboard-pulse display-3 text-success mb-3"></i>
+                                <h5 class="card-title">Diagnostic Testing</h5>
+                                <p class="card-text">Recommended tests to confirm diagnosis and guide treatment.</p>
+                                <a href="#testing-recommendations" class="btn btn-outline-success mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3" data-aos="fade-up">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="bi bi-egg-fried display-3 text-warning mb-3"></i>
+                                <h5 class="card-title">Dietary Interventions</h5>
+                                <p class="card-text">Personalized dietary recommendations to manage symptoms.</p>
+                                <a href="#treatment-plan" class="btn btn-outline-warning mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Implications Section -->
+        <section id="health-implications" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-danger text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-activity me-2"></i>Health Implications</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-7" data-aos="fade-right">
+                        <h4>Short-term vs. Long-term Effects</h4>
+                        <p>Chronic bloating, while often dismissed as merely uncomfortable, can significantly impact quality of life and may have long-term health implications if left untreated. Short-term effects include sleep disruption, nutritional deficiencies due to malabsorption, physical discomfort, and psychological distress. Long-term, it can contribute to more serious conditions like worsening fatty liver disease, systemic inflammation, and persistent alterations in the gut microbiome.</p>
+                        <div style="height: 400px;"><canvas id="healthEffectsChart"></canvas></div>
+                    </div>
+                    <div class="col-md-5" data-aos="fade-left">
+                        <h4>Associated Health Risks</h4>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Condition</th>
+                                        <th>Risk Level</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Malabsorption</td>
+                                        <td><span class="badge bg-warning text-dark">Moderate</span></td>
+                                        <td>May worsen existing vitamin deficiencies (B12, D)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fatty Liver Progression</td>
+                                        <td><span class="badge bg-danger">High</span></td>
+                                        <td>Gut dysbiosis linked to NAFLD progression</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Systemic Inflammation</td>
+                                        <td><span class="badge bg-warning text-dark">Moderate</span></td>
+                                        <td>Chronic gut dysbiosis can contribute to inflammation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Intestinal Permeability</td>
+                                        <td><span class="badge bg-warning text-dark">Moderate</span></td>
+                                        <td>Can trigger immune responses and food sensitivities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Microbiome Disruption</td>
+                                        <td><span class="badge bg-danger">High</span></td>
+                                        <td>Long-term dysbiosis can permanently alter gut microbiota</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h4 class="mt-4">Quality of Life Impact</h4>
+                        <div class="progress-stacked mb-2">
+                            <div class="progress" role="progressbar" aria-label="Sleep Disruption" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                <div class="progress-bar bg-info">Sleep Disruption (75%)</div>
+                            </div>
+                        </div>
+                        <div class="progress-stacked mb-2">
+                            <div class="progress" role="progressbar" aria-label="Dietary Restrictions" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                <div class="progress-bar bg-warning">Dietary Restrictions (60%)</div>
+                            </div>
+                        </div>
+                        <div class="progress-stacked mb-2">
+                            <div class="progress" role="progressbar" aria-label="Physical Discomfort" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                <div class="progress-bar bg-danger">Physical Discomfort (50%)</div>
+                            </div>
+                        </div>
+                        <div class="progress-stacked">
+                            <div class="progress" role="progressbar" aria-label="Psychological Impact" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <div class="progress-bar bg-secondary">Psychological Impact (40%)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medication Analysis Section -->
+        <section id="medication-analysis" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-success text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-prescription2 me-2"></i>Medication Analysis</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 mb-4" data-aos="fade-right">
+                        <h4>Rifaximin (Rifagut 400mg)</h4>
+                        <p><strong>Recommended Dosage:</strong> 400mg three times daily for 14 days</p>
+                        <p><strong>Safety Profile:</strong> Excellent due to minimal systemic absorption</p>
+                        <p><strong>Mechanism:</strong> Non-absorbable antibiotic that targets bacterial overgrowth in the small intestine</p>
+                        <p><strong>Key Benefit:</strong> Most effective for hydrogen-predominant SIBO</p>
+                        <p><strong>Potential Side Effects:</strong> Nausea, gastrointestinal upset, fatigue, peripheral edema, dizziness, muscle spasms (rare)</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Safety Rating</h5>
+                                <div style="height: 250px;"><canvas id="rifaximinSafetyChart"></canvas></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Effectiveness for Different SIBO Types</h5>
+                                <div style="height: 250px;"><canvas id="rifaximinEffectivenessChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h4>Other Medications</h4>
+                        <div class="accordion" id="otherMedicationsAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingGanaton">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGanaton" aria-expanded="false" aria-controls="collapseGanaton">
+                                        Ganaton (Itopride Hydrochloride 50mg)
+                                    </button>
+                                </h2>
+                                <div id="collapseGanaton" class="accordion-collapse collapse" aria-labelledby="headingGanaton" data-bs-parent="#otherMedicationsAccordion">
+                                    <div class="accordion-body">
+                                        <p>Prokinetic agent that enhances gastric motility. Generally well-tolerated. Side effects may include diarrhea, abdominal pain, headache.</p>
+                                        <div style="height: 200px;"><canvas id="ganatonSafetyChart"></canvas></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingLibrax">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLibrax" aria-expanded="false" aria-controls="collapseLibrax">
+                                        Librax (Chlordiazepoxide 5mg / Clidinium Bromide 2.5mg)
+                                    </button>
+                                </h2>
+                                <div id="collapseLibrax" class="accordion-collapse collapse" aria-labelledby="headingLibrax" data-bs-parent="#otherMedicationsAccordion">
+                                    <div class="accordion-body">
+                                        <p>Combines an anxiolytic and an anticholinergic. Used for IBS symptoms. Potential for drowsiness, dry mouth, blurred vision, constipation. Long-term use can lead to dependence.</p>
+                                        <div style="height: 200px;"><canvas id="libraxSafetyChart"></canvas></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingEconorm">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEconorm" aria-expanded="false" aria-controls="collapseEconorm">
+                                        Econorm (Saccharomyces boulardii 250mg)
+                                    </button>
+                                </h2>
+                                <div id="collapseEconorm" class="accordion-collapse collapse" aria-labelledby="headingEconorm" data-bs-parent="#otherMedicationsAccordion">
+                                    <div class="accordion-body">
+                                        <p>Probiotic yeast used to restore gut flora. Generally safe. Rare side effects include gas, bloating, constipation. Caution in immunocompromised individuals.</p>
+                                        <div style="height: 200px;"><canvas id="econormSafetyChart"></canvas></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mt-4">Medication Comparison</h4>
+                        <div style="height: 300px;"><canvas id="medicationComparisonChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scientific Research Section -->
+        <section id="scientific-research" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-info text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-journal-richtext me-2"></i>Scientific Research & Dr. Pimentel's Work</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-7" data-aos="fade-right">
+                        <h4>Key Findings & Insights</h4>
+                        <p>Dr. Mark Pimentel and his team at Cedars-Sinai have been at the forefront of SIBO and IBS research. Their work has highlighted the role of gut motility, the migrating motor complex (MMC), and specific gas patterns (hydrogen, methane, hydrogen sulfide) in these conditions.</p>
+                        <ul>
+                            <li><strong>Post-Infectious IBS/SIBO:</strong> Food poisoning can trigger autoimmunity against vinculin, impairing MMC function and leading to SIBO.</li>
+                            <li><strong>Methane and Constipation:</strong> Elevated methane levels (produced by archaea like <em>Methanobrevibacter smithii</em>) are strongly associated with constipation-predominant IBS (IBS-C) and SIBO.</li>
+                            <li><strong>Hydrogen Sulfide SIBO:</strong> A more recently recognized form of SIBO, associated with diarrhea and pain, detectable by specialized breath tests (e.g., trio-smart).</li>
+                            <li><strong>Rifaximin Efficacy:</strong> Multiple studies support Rifaximin's effectiveness, particularly for hydrogen-predominant SIBO and IBS-D.</li>
+                        </ul>
+                        <p>Current research emphasizes a multi-faceted approach: eradicating bacterial overgrowth, addressing underlying motility issues, and dietary management.</p>
+                    </div>
+                    <div class="col-md-5" data-aos="fade-left">
+                        <h4>SIBO Subtypes Prevalence (Estimated)</h4>
+                        <div style="height: 300px;"><canvas id="siboSubtypesChart"></canvas></div>
+                        <p class="mt-3 text-center small"><em>Estimates vary based on population and diagnostic criteria.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Recommendations Section -->
+        <section id="testing-recommendations" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-warning text-dark">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-file-medical-fill me-2"></i>Testing Recommendations</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Given your symptoms and history, the following tests are recommended to confirm SIBO and rule out other conditions:</p>
+                <div class="row">
+                    <div class="col-md-6 mb-3" data-aos="fade-right">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-lungs-fill text-primary me-2"></i>Breath Test (Lactulose or Glucose)</h5>
+                                <p class="card-text">This is the most common non-invasive test for SIBO. It measures hydrogen and methane gases produced by bacteria after ingesting a sugar substrate. A <strong>3-gas breath test (like trio-smart)</strong> is ideal as it also measures hydrogen sulfide.</p>
+                                <img src="img/breath_test_sample.png" alt="Sample Breath Test Results" class="img-fluid rounded mt-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3" data-aos="fade-left">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-eyedropper text-success me-2"></i>Blood Tests</h5>
+                                <p class="card-text">Consider repeating Vitamin B12 and Vitamin D tests to monitor deficiencies. Additionally, specific antibody tests (anti-CdtB and anti-vinculin, e.g., ibs-smart) can help identify post-infectious IBS, which has a high correlation with SIBO.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-3">While small intestinal aspirate and culture is considered the gold standard, it is invasive and less commonly performed. Breath testing is a practical first step. Your previous normal endoscopy and colonoscopy results are valuable in ruling out structural issues.</p>
+            </div>
+        </section>
+
+        <!-- Treatment Plan Section -->
+        <section id="treatment-plan" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-clipboard-check-fill me-2"></i>Comprehensive Treatment Plan</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">A multi-pronged approach is crucial for effectively managing SIBO and preventing recurrence.</p>
+                <div class="row">
+                    <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100">
+                            <div class="card-header bg-light fw-bold">1. Eradication (Antimicrobials)</div>
+                            <div class="card-body">
+                                <p><strong>Rifaximin (Rifagut 400mg):</strong> Three times daily for 14 days. This is based on current guidelines and your positive past response.</p>
+                                <p><em>If methane is also elevated on a breath test, a combination with Neomycin or Metronidazole might be considered by your doctor. For hydrogen sulfide, Bismuth subsalicylate may be added.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100">
+                            <div class="card-header bg-light fw-bold">2. Dietary Interventions</div>
+                            <div class="card-body">
+                                <p><strong>Initial Phase (Post-Antibiotics):</strong> A short-term (2-4 weeks) low-FODMAP diet or a less restrictive diet like the SIBO Specific Diet (Dr. Siebecker) can help reduce symptoms and prevent immediate relapse.</p>
+                                <p><strong>Long-Term:</strong> Gradually reintroduce foods to identify specific ongoing triggers. Focus on whole, unprocessed foods. Manage intake of sugar, oily, and spicy foods as per your triggers.</p>
+                                <div style="height: 250px;"><canvas id="dietComparisonChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100">
+                            <div class="card-header bg-light fw-bold">3. Prevention of Recurrence (Motility & Lifestyle)</div>
+                            <div class="card-body">
+                                <p><strong>Prokinetics:</strong> Essential to stimulate the migrating motor complex (MMC). Low-dose Erythromycin, Prucalopride, or natural options like Iberogast or ginger can be discussed with your doctor. Start after completing antibiotics.</p>
+                                <p><strong>Meal Spacing:</strong> Allow at least 4-5 hours between meals and a 12-hour overnight fast to support MMC function.</p>
+                                <p><strong>Stress Management & Sleep:</strong> Crucial for gut health. Though you indicated no specific interest, these are important long-term factors.</p>
+                                <div style="height: 250px;"><canvas id="lifestyleImpactChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation & Progress Section -->
+        <section id="implementation" class="py-5 card shadow-lg mb-5" data-aos="fade-up">
+            <div class="card-header bg-secondary text-white">
+                <h2 class="card-title h4 mb-0"><i class="bi bi-calendar-check-fill me-2"></i>Implementation & Expected Progress</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">This section outlines a potential timeline and key actions for implementing the treatment plan.</p>
+                <div class="row">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <h4>Actionable Steps:</h4>
+                        <ol>
+                            <li><strong>Consult Your Doctor:</strong> Discuss these findings and recommendations with your healthcare provider before making any changes to your treatment.</li>
+                            <li><strong>Diagnostic Testing:</strong> Undergo a 3-gas breath test (e.g., trio-smart) to confirm SIBO type and guide specific antimicrobial choices if needed.</li>
+                            <li><strong>Antimicrobial Therapy:</strong> If SIBO is confirmed and your doctor agrees, complete the 14-day course of Rifaximin (400mg TID).</li>
+                            <li><strong>Dietary Modification:</strong> Implement a short-term SIBO-specific diet post-antibiotics, then gradually reintroduce foods.</li>
+                            <li><strong>Prokinetic Therapy:</strong> Start a prokinetic agent after antibiotic course, as prescribed by your doctor.</li>
+                            <li><strong>Monitor Symptoms:</strong> Keep a food and symptom diary to track progress and identify triggers.</li>
+                            <li><strong>Follow-up:</strong> Schedule follow-up appointments with your doctor to assess progress and adjust the plan as needed.</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <h4>Expected Progress Timeline (Symptom Reduction)</h4>
+                        <div style="height: 300px;"><canvas id="progressTimelineChart"></canvas></div>
+                        <p class="mt-2 small text-muted"><em>This is an illustrative timeline. Individual results may vary. Consistent adherence to the plan is key.</em></p>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="btn btn-lg btn-primary print-button"><i class="bi bi-printer-fill me-2"></i>Print Dashboard Summary</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Gut Health Research Dashboard. For informational purposes only. Consult with a healthcare professional for medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

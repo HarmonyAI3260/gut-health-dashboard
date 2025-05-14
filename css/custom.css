@@ -1,0 +1,166 @@
+/* Custom CSS for Gut Health Dashboard */
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    padding-top: 70px; /* Account for fixed navbar */
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1512860149332-a488babebb44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Replace with a relevant, high-quality background image */
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffc107 !important; /* Bootstrap warning color for emphasis */
+}
+
+section {
+    padding: 60px 0;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.card-title i {
+    font-size: 1.5em;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #0d6efd; /* Bootstrap primary */
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.progress-stacked {
+    height: 25px;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    font-weight: bold;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.badge {
+    font-size: 0.9em;
+    padding: 0.5em 0.75em;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+/* Chart canvas responsiveness */
+canvas {
+    max-width: 100%;
+    height: auto !important; /* Override inline style from Chart.js if needed */
+}
+
+/* Animation enhancements */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.alert {
+    border-left-width: 5px;
+}
+
+.alert-info {
+    border-left-color: #0dcaf0;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+.print-button {
+    margin-top: 20px;
+}
+
+/* Ensure chart containers have a defined height to prevent collapse before chart.js renders */
+#severityChart,
+#healthEffectsChart,
+#rifaximinSafetyChart,
+#rifaximinEffectivenessChart,
+#ganatonSafetyChart,
+#libraxSafetyChart,
+#econormSafetyChart,
+#medicationComparisonChart,
+#siboSubtypesChart,
+#dietComparisonChart,
+#lifestyleImpactChart,
+#progressTimelineChart {
+    min-height: 200px; /* Minimum height for chart containers */
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+

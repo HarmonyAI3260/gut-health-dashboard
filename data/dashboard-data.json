@@ -1,0 +1,210 @@
+{
+  "healthImplications": {
+    "shortTerm": {
+      "sleepDisruption": 80,
+      "nutritionalImpact": 60,
+      "physicalDiscomfort": 70,
+      "psychologicalImpact": 50,
+      "healthRisk": 30
+    },
+    "longTerm": {
+      "sleepDisruption": 50,
+      "nutritionalImpact": 75,
+      "physicalDiscomfort": 45,
+      "psychologicalImpact": 60,
+      "healthRisk": 80
+    },
+    "qualityOfLife": {
+      "sleepDisruption": 75,
+      "dietaryRestrictions": 60,
+      "physicalDiscomfort": 50,
+      "psychologicalImpact": 40
+    },
+    "associatedRisks": [
+      {
+        "condition": "Malabsorption",
+        "riskLevel": "Moderate",
+        "description": "May worsen existing vitamin deficiencies (B12, D)"
+      },
+      {
+        "condition": "Fatty Liver Progression",
+        "riskLevel": "High",
+        "description": "Gut dysbiosis linked to NAFLD progression"
+      },
+      {
+        "condition": "Systemic Inflammation",
+        "riskLevel": "Moderate",
+        "description": "Chronic gut dysbiosis can contribute to inflammation"
+      },
+      {
+        "condition": "Intestinal Permeability",
+        "riskLevel": "Moderate",
+        "description": "Can trigger immune responses and food sensitivities"
+      },
+      {
+        "condition": "Microbiome Disruption",
+        "riskLevel": "High",
+        "description": "Long-term dysbiosis can permanently alter gut microbiota"
+      }
+    ]
+  },
+  "medicationAnalysis": {
+    "rifaximin": {
+      "safetyRatings": {
+        "overallSafety": 90,
+        "sideEffectRisk": 85,
+        "longTermUseSafety": 80,
+        "drugInteractionRisk": 95
+      },
+      "effectiveness": {
+        "hydrogenSIBO": 85,
+        "methaneSIBO": 60,
+        "hydrogenSulfideSIBO": 50
+      }
+    },
+    "ganaton": {
+      "safetyRatings": {
+        "overallSafety": 80,
+        "sideEffectRisk": 75,
+        "longTermUseSafety": 85,
+        "drugInteractionRisk": 80
+      }
+    },
+    "librax": {
+      "safetyRatings": {
+        "overallSafety": 60,
+        "sideEffectRisk": 50,
+        "longTermUseSafety": 40,
+        "drugInteractionRisk": 55
+      },
+      "sideEffects": [
+        {"effect": "Drowsiness", "probability": "High"},
+        {"effect": "Dry Mouth", "probability": "High"},
+        {"effect": "Blurred Vision", "probability": "Moderate"},
+        {"effect": "Constipation", "probability": "Moderate"},
+        {"effect": "Dependence", "probability": "Low-Moderate"}
+      ]
+    },
+    "econorm": {
+      "safetyRatings": {
+        "overallSafety": 95,
+        "sideEffectRisk": 90,
+        "longTermUseSafety": 95,
+        "drugInteractionRisk": 98
+      }
+    },
+    "comparison": {
+      "rifaximin": {
+        "effectiveness": 90,
+        "safety": 85,
+        "cost": 50,
+        "convenience": 80,
+        "longTermUse": 75
+      },
+      "ganaton": {
+        "effectiveness": 70,
+        "safety": 80,
+        "cost": 70,
+        "convenience": 85,
+        "longTermUse": 80
+      },
+      "librax": {
+        "effectiveness": 65,
+        "safety": 60,
+        "cost": 65,
+        "convenience": 90,
+        "longTermUse": 40
+      },
+      "econorm": {
+        "effectiveness": 60,
+        "safety": 95,
+        "cost": 75,
+        "convenience": 95,
+        "longTermUse": 90
+      }
+    }
+  },
+  "scientificResearch": {
+    "siboSubtypes": {
+      "hydrogenPredominant": 40,
+      "methanePredominant": 30,
+      "hydrogenSulfidePredominant": 15,
+      "mixedType": 15
+    },
+    "keyFindings": [
+      {
+        "finding": "IBS-C associated with higher breath methane levels",
+        "researcher": "Pimentel et al.",
+        "year": 2020,
+        "implication": "Methane-targeted antibiotics for constipation-predominant IBS"
+      },
+      {
+        "finding": "Post-infectious etiology of IBS and SIBO",
+        "researcher": "Pimentel et al.",
+        "year": 2017,
+        "implication": "Blood tests for anti-CdtB and anti-vinculin antibodies"
+      },
+      {
+        "finding": "Hydrogen sulfide as a third gas in SIBO",
+        "researcher": "Rezaie et al.",
+        "year": 2022,
+        "implication": "Trio-Smart breath test for comprehensive diagnosis"
+      },
+      {
+        "finding": "Impaired MMC function in SIBO patients",
+        "researcher": "Takakura & Pimentel",
+        "year": 2020,
+        "implication": "Prokinetics to prevent SIBO recurrence"
+      },
+      {
+        "finding": "Rifaximin efficacy for IBS-D",
+        "researcher": "Pimentel et al.",
+        "year": 2011,
+        "implication": "FDA approval of Rifaximin for IBS-D"
+      }
+    ]
+  },
+  "dietaryInterventions": {
+    "comparison": {
+      "lowFODMAP": {
+        "effectiveness": 75,
+        "difficulty": 60,
+        "scientificEvidence": 85
+      },
+      "specificCarbohydrateDiet": {
+        "effectiveness": 70,
+        "difficulty": 75,
+        "scientificEvidence": 70
+      },
+      "lowSulfurDiet": {
+        "effectiveness": 65,
+        "difficulty": 65,
+        "scientificEvidence": 50
+      },
+      "elementalDiet": {
+        "effectiveness": 90,
+        "difficulty": 95,
+        "scientificEvidence": 80
+      }
+    }
+  },
+  "lifestyleModifications": {
+    "impact": {
+      "sleepOptimization": 85,
+      "stressManagement": 80,
+      "physicalActivity": 70,
+      "mealTiming": 75,
+      "hydration": 65
+    }
+  },
+  "treatmentProgress": {
+    "timeline": {
+      "week1": 10,
+      "week2": 30,
+      "week4": 50,
+      "week8": 70,
+      "week12": 80,
+      "week24": 90
+    }
+  }
+}

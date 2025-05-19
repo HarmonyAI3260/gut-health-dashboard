@@ -1,10 +1,18 @@
 /* Custom CSS for Gut Health Dashboard */
 
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-header-bg: #f8f9fa;
+    --card-text-color: #333;
+}
+
 body {
-    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     padding-top: 70px; /* Account for fixed navbar */
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .hero-section {
@@ -48,6 +56,8 @@ section {
 
 .card {
     border: none;
+    background-color: var(--card-bg);
+    color: var(--card-text-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -58,6 +68,8 @@ section {
 
 .card-header {
     font-weight: bold;
+    background-color: var(--card-header-bg);
+    color: var(--card-text-color);
 }
 
 .card-title i {
@@ -162,5 +174,26 @@ canvas {
         margin-left: 0;
         padding: 10px 0;
     }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --card-bg: #1f1f1f;
+    --card-header-bg: #2b2b2b;
+    --card-text-color: #f8f9fa;
+}
+
+body.dark-mode .navbar {
+    background-color: #212529 !important;
+}
+
+body.dark-mode footer {
+    background-color: #212529;
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1512860149332-a488babebb44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
 }
 
